@@ -10,9 +10,7 @@ def negate_list(lst):
     new_lst = []
 
     for n in lst:
-        if n > 0:
-            n *= -1
-        new_lst.append(n)
+        new_lst.append(n * -1)
 
     ### DO NOT MODIFY THE FOLLOWING LINE!
     return new_lst
