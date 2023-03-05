@@ -9,7 +9,17 @@ def rows_and_columns_contain(lst, target):
     """
 
     ### Replace pass with your code
-    pass
+    in_all_rows = True
+    in_all_cols = True
+
+    for i, l in enumerate(lst):
+        if target not in l:
+            in_all_rows = False
+            break
+    
+
+
+    return in_all_rows and in_all_cols
 
 
 #############################################################
