@@ -8,7 +8,7 @@ import sys
 import os
 
 
-def part1(numbers):
+def find_total_fuel_reqs(numbers):
     """
     Solves Part 1 (see problem statement for more details)
 
@@ -19,10 +19,17 @@ def part1(numbers):
     """
 
     ### Replace with your code
-    return None
+    total = 0
 
+    for n in numbers:
+        n = (n // 3) - 2
+        total += n
+    
+    return total
 
-def part2(numbers):
+# find_total_fuel_reqs(numbers) --> 3331849
+
+def find_added_fuel_reqs(numbers):
     """
     Solves Part 2 (see problem statement for more details)
 
@@ -33,8 +40,19 @@ def part2(numbers):
     """
 
     ### Replace with your code
-    return None
+    total = 0
 
+    for n in numbers:
+        n_total = 0
+        
+        while n > 0:
+            n = find_total_fuel_reqs([n])
+            if n > 0:
+                n_total += n
+        
+        total += n_total
+
+    return total
 
 ############################################
 ###                                      ###
