@@ -11,13 +11,20 @@ def rows_and_columns_contain(lst, target):
     ### Replace pass with your code
     in_all_rows = True
     in_all_cols = True
+    indices = []
 
-    for i, l in enumerate(lst):
-        if target not in l:
+    for row in lst:
+        if target not in row:
             in_all_rows = False
             break
-    
+        for i, c in row:
+            if c == target:
+                indices.append(i)
 
+    for x in range(len(lst[0])):
+        if x not in indices:
+            in_all_cols = False
+            break
 
     return in_all_rows and in_all_cols
 
